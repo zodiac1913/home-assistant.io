@@ -20,19 +20,19 @@ To enable OpenGarage Covers in your installation, add the following to your `con
 ```yaml
 # Example configuration.yaml entry
 cover:
-  platform: opengarage
-  covers:
-    garage:
-      host: 192.168.1.12
-      device_key: opendoor
-      name: Left Garage Door
-    garage2:
-      protocol: https
-      verify_ssl: false
-      host: garage.example.com
-      port: 443
-      device_key: opendoor
-      name: Right Garage Door
+  - platform: opengarage
+    covers:
+      garage:
+        host: 192.168.1.12
+        device_key: opendoor
+        name: Left Garage Door
+      garage2:
+        protocol: https
+        verify_ssl: false
+        host: garage.example.com
+        port: 443
+        device_key: opendoor
+        name: Right Garage Door
 ```
 
 {% configuration %}
@@ -86,19 +86,19 @@ covers:
 ```yaml
 # Related configuration.yaml entry
 cover:
-  platform: opengarage
-  covers:
+  - platform: opengarage
+    covers:
       garage:
         host: 192.168.1.12
         device_key: opendoor
         name: honda
 
 sensor:
-  platform: template
-  sensors:
-    garage_status:
-      friendly_name: 'Honda Door Status'
-      value_template: '{% if states.cover.honda %}
+  - platform: template
+    sensors:
+      garage_status:
+        friendly_name: 'Honda Door Status'
+        value_template: '{% if states.cover.honda %}
           {% if states.cover.honda.attributes["door_state"] == "open" %}
             Open
           {% elif states.cover.honda.attributes["door_state"] == "closed" %}
@@ -115,26 +115,26 @@ sensor:
           {% endif %}'
 
 binary_sensor:
-  platform: template
-  sensors:
-    honda_in_garage:
-      friendly_name: "Honda In Garage"
-      value_template: "{{ state_attr('cover.honda', 'distance_sensor') < 100 }}"
-      availability_template: >-
-        {% if is_state('cover.honda','closed') %}
-          true
-        {% else %}
-          unavailable
-        {% endif %}
-      icon_template: >-
-        {% if is_state('binary_sensor.honda_in_garage','on') %}
-          mdi:car
-        {% else %}
-          mdi:car-arrow-right
-        {% endif %}
-      unique_id: binary_sensor.honda_in_garage
-      delay_on: 5
-      delay_off: 5
+  - platform: template
+    sensors:
+      honda_in_garage:
+        friendly_name: "Honda In Garage"
+        value_template: "{{ state_attr('cover.honda', 'distance_sensor') < 100 }}"
+        availability_template: >-
+          {% if is_state('cover.honda','closed') %}
+            true
+          {% else %}
+            unavailable
+          {% endif %}
+        icon_template: >-
+          {% if is_state('binary_sensor.honda_in_garage','on') %}
+            mdi:car
+          {% else %}
+            mdi:car-arrow-right
+          {% endif %}
+        unique_id: binary_sensor.honda_in_garage
+        delay_on: 5
+        delay_off: 5
 
 group:
   garage:

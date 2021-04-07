@@ -71,8 +71,7 @@ Screenshot showing the automation trace of a previously ran automation.
 
 The above screenshot shows a previous run of an automation. The automation
 is displayed in the form of an interactive graph. You can see which path it took
-and each step of the automation can be click and viewed in detail on what
-happened. It traces the complete run of an automation run.
+and each step of the automation can be clicked and viewed in detail. It traces the complete run of an automation run.
 
 If an automation didn't run as it should, this will allows you to debug and
 understand why it ran the way it did.
@@ -100,7 +99,7 @@ Today we introduce: Home Assistant Analytics. Opt-in, privacy-aware, public
 and open source. Just as it all should be for our project.
 
 [@ludeeus] did a fantastic job writing this new integration. You decide if you
-turn it on or not; however, we guarantee its privacy-aware. Doubt it? Review it!
+turn it on or not; however, we guarantee it's privacy-aware. Doubt it? Review it!
 Everything is open source!
 
 Not open enough for you? We are publishing the result for everybody to see:
@@ -149,7 +148,7 @@ Thanks for sharing already! ❤️
 This feature is really cool. While technically a small improvement, it is a
 change that can impact you (as in "breaking"), but also, will greatly help you!
 
-So imaging this little template: `{% raw %}{{ my_variable }}{% endraw %}`
+So imagine this little template: `{% raw %}{{ my_variable }}{% endraw %}`
 
 Previously, if `my_variable` would not exist in the template or system as a
 variable, Home Assistant would just ignore it and skip over it.
@@ -171,7 +170,7 @@ you thought was there, isn't. It is quite possible you get a bunch
 of warnings after upgrading to this release. Fixing those warnings, really helps
 to improve your setup.
 
-So, what if a viable isn't always there, but I still want to use it? Well,
+So, what if a variable isn't always there, but I still want to use it? Well,
 you can give it a default, for example:
 `{% raw %}{{ my_variable | default }}{% endraw %}`. Or even an default value
 (10 in this example): `{% raw %}{{ my_variable | default(10) }}{% endraw %}`.
@@ -209,7 +208,7 @@ section for more info.
 
 Alright, now the fun stuff! You can now configure each Z-Wave device straight
 from within Home Assistant. When you view a device in the Home Assistant
-frontend, you can click on "CONFIGURE DEVICE" button that is shown on each
+frontend, you can click on the "CONFIGURE DEVICE" button that is shown on each
 device page. This allows you to manage and adjust device (node) specific
 configuration parameters for the selected device.
 
@@ -269,16 +268,16 @@ curl --header "Content-Type: application/json" \
 It is not just webhooks! Any trigger that you can use in automations, can be
 used to update these types of template sensors.
 
-For this release, it only works for sensors; other platforms are supported yet.
+For this release it only works for sensors; other platforms are not supported yet.
 
-Please note: that these new template sensors are configured under the `template:`
-key in the configuration and is using a new configuration format and keys.
+Please note, these new template sensors are configured under the `template:`
+key in the configuration and are using a new configuration format and keys.
 For more information, [see the documentation](/integrations/template/#configuration-for-trigger-based-template-sensors).
 
 ## UI selectors for script fields
 
-You can now use UI Selectors for you scripts field parameters. This
-brings the same UI capabilities that Blueprint have to scripts. This allow for
+You can now use UI Selectors for your script field parameters. This
+brings the same UI capabilities that Blueprints have to scripts. This allows for
 creating advanced scripts that you can later easily reuse in your UI
 (even in UI automation).
 
@@ -293,7 +292,7 @@ For more details on these new field configuration option, see the
 ## Other noteworthy changes
 
 There is much more juice in this release; here are some of the other
-noteworthy changes this release:
+noteworthy changes:
 
 - The Supervisor is now in the integrations dashboard, and provides entities
   for all kinds of things! These entities are disabled by default, so head
@@ -340,7 +339,7 @@ We welcome the following new integrations this release:
 The following integration got support for a new platform:
 
 - [Gogogate2 and iSmartGate][gogogate2 docs] provides battery sensors for wiresless door sensors, added by [@emontnemery]
-- [Panasonic Viera][panasonic_viera docs] has now support for remotes, added by [@joogps]
+- [Panasonic Viera][panasonic_viera docs] now has support for remotes, added by [@joogps]
 - [Philips TV][philips_js docs] now has support for remotes, added by [@elupus]
 - [Rheem EcoNet Products] now have support for climate entities, added by [@w1ll1am23].
 - [Supervisor][hassio docs] integration now has entities and services for things like versions and pending updates, added by [@raman325]
@@ -674,10 +673,10 @@ remove it from your configuration.
 Vacuum attributes `clean start`, `clean stop` and camera
 attribute `generated_at` are now in a timestamp format.
 
-New format is "2021-03-20T10:35:47Z". This allow automation to use their
+New format is "2021-03-20T10:35:47Z". This allows automations to use their
 value based on `as_timestamp()`.
 
-If you relies on these attributes in your automation or script, you might need
+If you rely on these attributes in your automation or script, you might need
 to adjust them to match this change.
 
 ([@chemelli74] - [#48150]) ([neato docs])
@@ -727,7 +726,7 @@ You can now use the new style configuration when configuring the modbus
 integration. The existing configuration style is kept, allowing you to change
 gradually.
 
-Remark the existing configuration style will be removed in a couple of releases.
+Note, the existing configuration style will be removed in a couple of releases.
 
 Example of an existing configuration:
 
@@ -782,7 +781,7 @@ how to configure it.
 {% details "SolarEdge" %}
 
 The SolarEdge configuration via YAML has been deprecated and will be removed in
-a future release of Home Assistant. The integration is using a configuration via
+a future release of Home Assistant. The integration has used a configuration via
 the UI for two years now.
 
 Existing YAML configurations are automatically imported into the UI, and can be

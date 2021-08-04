@@ -52,6 +52,8 @@ action:
 The `tibber` sensor provides the current electricity price if you are a [Tibber](https://tibber.com/) customer.
 If you have a Tibber Pulse it will also show the electricity consumption in real time.
 
+You could use this test token to test the integration: `476c477d8a039529478ebd690d35ddd80e3308ffc49b59c65b142321aee963a4`
+
 
 ## Examples
 
